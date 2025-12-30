@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Food Order</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Food Restaurant</h1>
+</header>
+
+<div class="menu">
+
+  <div class="item">
+    <h3>Burger</h3>
+    <p>$5</p>
+    <button onclick="addToCart('Burger',5)">Add</button>
+  </div>
+
+  <div class="item">
+    <h3>Pizza</h3>
+    <p>$8</p>
+    <button onclick="addToCart('Pizza',8)">Add</button>
+  </div>
+
+  <div class="item">
+    <h3>Fried Chicken</h3>
+    <p>$6</p>
+    <button onclick="addToCart('Fried Chicken',6)">Add</button>
+  </div>
+
+  <div class="item">
+    <h3>French Fries</h3>
+    <p>$3</p>
+    <button onclick="addToCart('French Fries',3)">Add</button>
+  </div>
+
+  <div class="item">
+    <h3>Hot Dog</h3>
+    <p>$4</p>
+    <button onclick="addToCart('Hot Dog',4)">Add</button>
+  </div>
+
+  <div class="item">
+    <h3>Ice Cream</h3>
+    <p>$2</p>
+    <button onclick="addToCart('Ice Cream',2)">Add</button>
+  </div>
+
+  <div class="item">
+    <h3>Milk Tea</h3>
+    <p>$3</p>
+    <button onclick="addToCart('Milk Tea',3)">Add</button>
+  </div>
+
+</div>
+
+<div class="cart">
+  <h2>🛒 Cart</h2>
+  <ul id="cart-list"></ul>
+  <button onclick="clearCart()">Clear Cart</button>
+  <h3>Total: $<span id="total">0</span></h3>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
