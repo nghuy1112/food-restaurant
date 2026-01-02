@@ -2,54 +2,69 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Food Order</title>
+<title>Food Restaurant</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-  <h1>Food Restaurant</h1>
-</header>
+<header>🍽️ Food Restaurant</header>
+
+<div id="booking">
+  <h2>Đặt bàn trước</h2>
+  <input type="text" id="name" placeholder="Tên khách hàng">
+  <input type="number" id="people" placeholder="Số người">
+  <input type="time" id="time">
+  <button onclick="confirmBooking()">Xác nhận đặt bàn</button>
+</div>
+
+<div id="order-section" style="display:none;">
 
 <div class="menu">
 
   <div class="item">
+    <img src="images/burger.jpg">
     <h3>Burger</h3>
     <p>$5</p>
     <button onclick="addToCart('Burger',5)">Add</button>
   </div>
 
   <div class="item">
+    <img src="images/pizza.jpg">
     <h3>Pizza</h3>
     <p>$8</p>
     <button onclick="addToCart('Pizza',8)">Add</button>
   </div>
 
   <div class="item">
+    <img src="images/chicken.jpg">
     <h3>Fried Chicken</h3>
     <p>$6</p>
     <button onclick="addToCart('Fried Chicken',6)">Add</button>
   </div>
 
   <div class="item">
+    <img src="images/fries.jpg">
     <h3>French Fries</h3>
     <p>$3</p>
     <button onclick="addToCart('French Fries',3)">Add</button>
   </div>
 
   <div class="item">
+    <img src="images/hotdog.jpg">
     <h3>Hot Dog</h3>
     <p>$4</p>
     <button onclick="addToCart('Hot Dog',4)">Add</button>
   </div>
 
   <div class="item">
+    <img src="images/icecream.jpg">
     <h3>Ice Cream</h3>
     <p>$2</p>
     <button onclick="addToCart('Ice Cream',2)">Add</button>
   </div>
 
   <div class="item">
+    <img src="images/milktea.jpg">
     <h3>Milk Tea</h3>
     <p>$3</p>
     <button onclick="addToCart('Milk Tea',3)">Add</button>
@@ -60,8 +75,10 @@
 <div class="cart">
   <h2>🛒 Cart</h2>
   <ul id="cart-list"></ul>
-  <button onclick="clearCart()">Clear Cart</button>
   <h3>Total: $<span id="total">0</span></h3>
+  <button onclick="clearCart()">Clear Cart</button>
+</div>
+
 </div>
 
 <script src="script.js"></script>
