@@ -1,0 +1,157 @@
+tạo<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Food Restaurant</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>🍽️ FOOD RESTAURANT</header>
+
+<!-- ===== MENU ===== -->
+<div class="section">
+  <h2>1️⃣ Chọn món ăn</h2>
+
+  <div class="menu">
+
+    <div class="item">
+      <div class="img-wrap">
+        <img src="images/burger.jpg" alt="Burger" loading="lazy">
+        <span class="price-badge">$5</span>
+      </div>
+      <h3>Burger</h3>
+      <button onclick="addToCart('Burger',5)">Add</button>
+    </div>
+
+    <div class="item">
+      <div class="img-wrap">
+        <img src="images/pizza.jpg" alt="Pizza" loading="lazy">
+        <span class="price-badge">$8</span>
+      </div>
+      <h3>Pizza</h3>
+      <button onclick="addToCart('Pizza',8)">Add</button>
+    </div>
+
+    <div class="item">
+      <div class="img-wrap">
+        <img src="images/chicken.jpg" alt="Fried Chicken" loading="lazy">
+        <span class="price-badge">$6</span>
+      </div>
+      <h3>Fried Chicken</h3>
+      <button onclick="addToCart('Fried Chicken',6)">Add</button>
+    </div>
+
+    <div class="item">
+      <div class="img-wrap">
+        <img src="images/fries.jpg" alt="French Fries" loading="lazy">
+        <span class="price-badge">$3</span>
+      </div>
+      <h3>French Fries</h3>
+      <button onclick="addToCart('French Fries',3)">Add</button>
+    </div>
+
+    <div class="item">
+      <div class="img-wrap">
+        <img src="images/hotdog.jpg" alt="Hot Dog" loading="lazy">
+        <span class="price-badge">$4</span>
+      </div>
+      <h3>Hot Dog</h3>
+      <button onclick="addToCart('Hot Dog',4)">Add</button>
+    </div>
+
+    <div class="item">
+      <div class="img-wrap">
+        <img src="images/icecream.jpg" alt="Ice Cream" loading="lazy">
+        <span class="price-badge">$2</span>
+      </div>
+      <h3>Ice Cream</h3>
+      <button onclick="addToCart('Ice Cream',2)">Add</button>
+    </div>
+
+    <div class="item">
+      <div class="img-wrap">
+        <img src="images/milktea.jpg" alt="Milk Tea" loading="lazy">
+        <span class="price-badge">$3</span>
+      </div>
+      <h3>Milk Tea</h3>
+      <button onclick="addToCart('Milk Tea',3)">Add</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== CART ===== -->
+<div class="section">
+  <h2>🛒 Món đã chọn</h2>
+  <ul id="cart"></ul>
+  <h3>Tổng tiền: <span id="total">0</span> $</h3>
+</div>
+
+<!-- ===== BOOKING & ORDER ===== -->
+<div class="section">
+  <h2>2️⃣ Thông tin đơn hàng</h2>
+
+  <div class="order-form">
+    <input type="text" id="name" placeholder="Tên khách hàng">
+    <input type="number" id="people" placeholder="Số người">
+  </div>
+
+  <div id="dineInInfo" class="order-form">
+    <input type="date" id="date">
+    <input type="time" id="time">
+    <select id="table">
+      <option value="">Chọn bàn</option>
+      <option value="Bàn 1">Bàn 1</option>
+      <option value="Bàn 2">Bàn 2</option>
+      <option value="Bàn 3">Bàn 3</option>
+      <option value="Bàn 4">Bàn 4</option>
+    </select>
+  </div>
+
+
+  <br><br>
+
+  <!-- === PHẦN MỚI THÊM === -->
+  <div class="order-type">
+    <label class="radio-card">
+      <input type="radio" name="orderType" value="Dine in" checked>
+      <div class="card-inner">
+        <div class="card-title">Ăn tại quán</div>
+        <div class="card-sub">Chọn ngày, giờ và bàn</div>
+      </div>
+    </label>
+
+    <label class="radio-card">
+      <input type="radio" name="orderType" value="Delivery">
+      <div class="card-inner">
+        <div class="card-title">Giao về nhà</div>
+        <div class="card-sub">Nhập địa chỉ & số điện thoại</div>
+        <div class="card-details">
+          <input type="text" id="address" placeholder="Địa chỉ giao hàng">
+          <input type="text" id="phone" placeholder="Số điện thoại">
+        </div>
+      </div>
+    </label>
+  </div>
+
+
+  <!-- === HẾT PHẦN MỚI === -->
+
+  <br><br>
+  <div class="confirm-btn">
+    <button onclick="confirmOrder()">Xác nhận</button>
+  </div>
+</div>
+
+<!-- ===== ORDER HISTORY ===== -->
+<div class="section">
+  <h2>📦 Lịch sử đơn hàng</h2>
+  <div id="orderHistory" class="order-history">
+    <!-- Order cards will be rendered here -->
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

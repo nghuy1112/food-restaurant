@@ -1,0 +1,450 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f2f2f2;
+}
+
+header {
+    background: #ff5722;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.section {
+    background: white;
+    margin: 20px auto;
+    padding: 20px;
+    width: 90%;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 20px;
+}
+
+.item {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    background: #fafafa;
+}
+
+.img-wrap {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 22px rgba(17,24,39,0.06);
+}
+
+.img-wrap img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    display: block;
+    transition: transform 220ms ease;
+}
+
+.img-wrap:hover img {
+    transform: scale(1.06);
+}
+
+.price-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: var(--accent);
+    color: white;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-weight: 700;
+    box-shadow: 0 6px 14px rgba(255,112,67,0.18);
+    font-size: 14px;
+}
+
+.item h3 {
+    margin: 8px 0 5px;
+}
+
+.item p {
+    margin: 5px 0;
+    font-weight: bold;
+}
+
+/* Normalize buttons across browsers */
+* { box-sizing: border-box; }
+
+button {
+    -webkit-appearance: none;
+    appearance: none;
+    outline: none;
+    border: none;
+    background: linear-gradient(180deg, var(--accent) 0%, var(--accent-dark) 100%);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    line-height: 1;
+    box-shadow: 0 6px 14px rgba(255,112,67,0.18);
+    transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(180deg,#ff8a65,#e64a19);
+}
+
+#cart {
+    list-style: none;
+    padding: 0;
+}
+
+#cart li {
+    padding: 6px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+#cart input {
+    width: 50px;
+    padding: 3px;
+    text-align: center;
+    margin: 0 5px;
+}
+
+#cart button {
+    margin-left: 5px;
+    padding: 3px 8px;
+    font-size: 14px;
+}
+
+#cart button:first-of-type {
+    background: #f44336;
+}
+
+input {
+    padding: 10px;
+    margin: 5px;
+    width: 200px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+#deliveryInfo input {
+    display: block;
+    margin: 8px auto;
+}
+label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+}
+
+label input[type="radio"] {
+    margin: 0;
+}
+/* Căn nhóm radio gọn gàng */
+.order-type {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 10px 0 20px;
+}
+
+.order-type label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;            /* radio sát chữ */
+    cursor: pointer;
+}
+
+.order-type input[type="radio"] {
+    margin: 0;
+}
+
+/* Căn nút xác nhận ra giữa */
+.confirm-btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+.order-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.order-form input {
+    width: 260px;
+}
+
+/* Căn giữa phần chọn ngày/giờ/bàn cho Dine-in */
+#dineInInfo {
+    /* Hiển thị ngang, căn giữa nội dung */
+    flex-direction: row;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* cho responsive */
+}
+
+#dineInInfo input,
+#dineInInfo select {
+    width: 160px;
+}
+
+/* =====================
+   Visual polish & color
+   ===================== */
+:root {
+    --accent: #ff7043;
+    --accent-dark: #e64a19;
+    --muted: #6b7280;
+    --card-bg: linear-gradient(135deg, #fff 0%, #fffaf0 100%);
+    --glass: rgba(255,255,255,0.7);
+}
+
+body {
+    background: linear-gradient(180deg, #f7f7fb 0%, #eef6ff 100%);
+}
+
+header {
+    background: linear-gradient(90deg, var(--accent), #ff8a65);
+    box-shadow: 0 6px 18px rgba(230, 74, 25, 0.15);
+    letter-spacing: 0.6px;
+}
+
+.section {
+    background: var(--card-bg);
+    border: 1px solid rgba(0,0,0,0.04);
+}
+
+.item {
+    transition: transform 180ms ease, box-shadow 180ms ease;
+    box-shadow: 0 6px 20px rgba(17,24,39,0.03);
+}
+
+.item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(17,24,39,0.08);
+}
+
+.item h3 {
+    color: #333;
+}
+
+.item p {
+    color: var(--accent-dark);
+}
+
+button {
+    background: linear-gradient(180deg, var(--accent) 0%, var(--accent-dark) 100%);
+    box-shadow: 0 6px 14px rgba(255,112,67,0.18);
+    transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+/* Center Add buttons in each menu item, and make responsive */
+.item > button {
+    display: block;
+    margin: 12px auto 0;
+    padding: 10px 20px;
+    max-width: 160px;
+    width: 72%;
+    border-radius: 10px;
+    font-weight: 700;
+}
+
+/* Ensure radio group is centered and items vertically aligned */
+.order-type {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin: 10px 0 20px;
+}
+
+/* Make confirm button explicit and centered */
+.confirm-btn button {
+    display: block;
+    margin: 0 auto;
+    min-width: 160px;
+}
+
+#cart {
+    background: linear-gradient(180deg, rgba(255,255,255,0.5), rgba(255,255,255,0.35));
+    padding: 12px;
+    border-radius: 8px;
+}
+
+
+#cart li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#cart li b:first-of-type {
+    flex: 1;
+}
+
+#cart input {
+    width: 70px;
+}
+
+#total {
+    font-weight: 800;
+    color: var(--accent-dark);
+    background: rgba(255,112,67,0.06);
+    padding: 4px 8px;
+    border-radius: 6px;
+}
+
+/* Card-style radio options for order type */
+.radio-card {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: transform 120ms ease;
+    position: relative;
+    min-width: 150px;
+}
+
+.radio-card input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.radio-card .card-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 10px 14px;
+    border-radius: 12px;
+    background: rgba(0,0,0,0.03);
+    border: 1px solid rgba(0,0,0,0.06);
+    transition: background 160ms ease, box-shadow 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+
+.radio-card .card-title {
+    font-weight: 800;
+    color: #222;
+}
+
+.radio-card .card-sub {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+/* Checked state: highlight card */
+.radio-card input[type="radio"]:checked + .card-inner {
+    background: linear-gradient(180deg, rgba(255,112,67,0.12), rgba(255,112,67,0.08));
+    border-color: var(--accent);
+    box-shadow: 0 8px 20px rgba(230,74,25,0.12);
+    transform: translateY(-4px);
+}
+
+/* Card details (hidden until selected) */
+.radio-card .card-details {
+    display: none;
+    width: 100%;
+    margin-top: 8px;
+    gap: 8px;
+}
+
+.radio-card input[type="radio"]:checked + .card-inner .card-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.radio-card .card-details input {
+    width: 100%;
+    max-width: 220px;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid rgba(0,0,0,0.08);
+}
+
+/* Focus-visible for accessibility */
+.radio-card input[type="radio"]:focus + .card-inner,
+.radio-card .card-inner:focus {
+    box-shadow: 0 0 0 3px rgba(255,112,67,0.12);
+}
+
+
+/* Make confirm button stand out */
+.confirm-btn button {
+    padding: 12px 28px;
+    font-size: 16px;
+}
+
+/* Responsive: stack dine-in controls on small screens */
+@media (max-width: 480px) {
+    #dineInInfo input,
+    #dineInInfo select,
+    .order-form input {
+        width: 100%;
+        max-width: 320px;
+    }
+    #dineInInfo {
+        flex-direction: column;
+    }
+}
+
+/* Order history styles */
+.order-history p {
+    margin: 8px 0;
+    color: var(--muted);
+}
+
+.order-card {
+    background: rgba(0,0,0,0.04);
+    border-radius: 10px;
+    padding: 12px;
+    margin-bottom: 12px;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.order-header {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.order-num { font-weight: 800; }
+.order-time { color: var(--muted); font-size: 12px; }
+.order-status { margin-left: auto; padding: 6px 10px; border-radius: 999px; font-weight: 700; font-size: 13px; }
+.order-status.active { background: rgba(0,128,0,0.08); color: #0a7f2e; }
+.order-status.cancelled { background: rgba(255,0,0,0.08); color: #b71c1c; }
+
+.order-items { margin-bottom: 8px; }
+.order-items .oi { font-size: 14px; }
+
+.order-meta { color: var(--muted); font-size: 13px; margin-bottom: 8px; }
+.order-total { font-weight: 800; color: var(--accent-dark); }
+
+.order-actions { margin-top: 8px; }
+.cancel-btn { background: #f44336; padding: 8px 12px; border-radius: 8px; color: white; border: none; cursor: pointer; }
+.cancel-btn:hover { background: #d32f2f; }
+
+
